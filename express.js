@@ -10,6 +10,7 @@ const port = 4000;
 app.get("/users", async (req, res) => {
   let response = await fetch("http://localhost:5000/content");
   let data = await response.json();
+  
   if (!response.ok) {
     return res.json({ error: "Error while fetching data" });
   }
