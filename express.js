@@ -82,8 +82,6 @@ app.delete("/users/:id", async (req, res) => {
   if (id <= 0) {
     return res.status(404).json({ error: "Not a valid ID value" });
   }
-
-  
   try {
     let response = await fetch(`http://localhost:5000/content/${id}`, {
       method: "DELETE",
